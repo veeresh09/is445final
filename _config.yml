@@ -1,12 +1,12 @@
-title: ISS 445 Group 9
+title: IS445-Group9
 author:
-  name: GitHub User
-  email: your-email@domain.com
+  name: Group 9
+  email: youpeng2@illinois.edu pb37@illinois.edu mengkew2@illinois.edu vkande2@illinois.edu
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  Project webpage for IS445
+  Final presentation webpage for group 9
 
 # Build settings
 
