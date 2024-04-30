@@ -2,11 +2,7 @@
 layout: post
 title:  "Final Project Presentation"
 ---
-## Group Member:
-#### You Peng  
-#### Veeresh Kande 
-#### Mengke Wu
-#### Prathyush Bhamidipati
+#### Group Member: You Peng, Veeresh Kande, Mengke Wu, Prathyush Bhamidipati
 
 # Introduction
 
