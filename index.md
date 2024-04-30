@@ -4,13 +4,13 @@ title:  "Final Project Presentation"
 ---
 ## Group Member:
 
-## You Peng  
+#### You Peng  
 
-## Veeresh Kande 
+#### Veeresh Kande 
 
-## Mengke Wu
+#### Mengke Wu
 
-## Prathyush Bhamidipati
+#### Prathyush Bhamidipati
 
 # Introduction
 
