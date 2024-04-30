@@ -53,7 +53,7 @@ title:  "Final Project Presentation"
 **Enrollment by County across Years**
 
 `Description`: This bar chart represents an interactive visualization detailing enrollment trends by grade across different counties and years. It utilizes Altair to create a bar chart that displays the total number of students enrolled in each grade from 1 to 12. Users can interact with the visualization through a dropdown menu that combines both county and year into a single filter, allowing for dynamic and specific querying of enrollment data. Each bar represents a grade, and its height indicates the total student enrollment for that grade, as filtered by the selected county-year combination.
-<iframe src="https://youpeng0630.github.io/445final/enrollment_trends_by_grade.html" width="100%" height="600"></iframe>
+<iframe src="https://youpeng0630.github.io/445final/enrollment_trends_by_grade.html" width="130%" height="600"></iframe>
 
 ## Plot Topic 3 - School Distribution
 
