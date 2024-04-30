@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": "bar", "encoding": {"color": {"field": "COUNTY_NAME", "type": "nominal"}, "tooltip": [{"field": "COUNTY_NAME", "type": "nominal"}, {"field": "NUM_SCHOOLS", "type": "quantitative"}], "x": {"field": "COUNTY_NAME", "type": "nominal"}, "y": {"field": "NUM_SCHOOLS", "type": "quantitative"}}, "height": 300, "transform": [{"filter": {"selection": "selector003"}}], "width": 800}, {"mark": "bar", "encoding": {"x": {"field": "NUM_SCHOOLS", "type": "quantitative"}}, "height": 50, "selection": {"selector003": {"type": "interval", "encodings": ["x"]}}, "width": 800}], "data": {"name": "data-913f6c1a03e694f00e188d509fb48e64"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-913f6c1a03e694f00e188d509fb48e64": [{"COUNTY_NAME": "ALBANY", "NUM_SCHOOLS": 211}, {"COUNTY_NAME": "ALLEGANY", "NUM_SCHOOLS": 56}, {"COUNTY_NAME": "BRONX", "NUM_SCHOOLS": 1327}, {"COUNTY_NAME": "BROOME", "NUM_SCHOOLS": 162}, {"COUNTY_NAME": "CATTARAUGUS", "NUM_SCHOOLS": 96}, {"COUNTY_NAME": "CAYUGA", "NUM_SCHOOLS": 60}, {"COUNTY_NAME": "CHAUTAUQUA", "NUM_SCHOOLS": 152}, {"COUNTY_NAME": "CHEMUNG", "NUM_SCHOOLS": 66}, {"COUNTY_NAME": "CHENANGO", "NUM_SCHOOLS": 66}, {"COUNTY_NAME": "CLINTON", "NUM_SCHOOLS": 84}, {"COUNTY_NAME": "COLUMBIA", "NUM_SCHOOLS": 45}, {"COUNTY_NAME": "CORTLAND", "NUM_SCHOOLS": 51}, {"COUNTY_NAME": "DELAWARE", "NUM_SCHOOLS": 54}, {"COUNTY_NAME": "DUTCHESS", "NUM_SCHOOLS": 223}, {"COUNTY_NAME": "ERIE", "NUM_SCHOOLS": 645}, {"COUNTY_NAME": "ESSEX", "NUM_SCHOOLS": 42}, {"COUNTY_NAME": "FRANKLIN", "NUM_SCHOOLS": 60}, {"COUNTY_NAME": "FULTON", "NUM_SCHOOLS": 45}, {"COUNTY_NAME": "GENESEE", "NUM_SCHOOLS": 57}, {"COUNTY_NAME": "GREENE", "NUM_SCHOOLS": 48}, {"COUNTY_NAME": "HAMILTON", "NUM_SCHOOLS": 12}, {"COUNTY_NAME": "HERKIMER", "NUM_SCHOOLS": 72}, {"COUNTY_NAME": "JEFFERSON", "NUM_SCHOOLS": 114}, {"COUNTY_NAME": "KINGS", "NUM_SCHOOLS": 1666}, {"COUNTY_NAME": "LEWIS", "NUM_SCHOOLS": 37}, {"COUNTY_NAME": "LIVINGSTON", "NUM_SCHOOLS": 59}, {"COUNTY_NAME": "MADISON", "NUM_SCHOOLS": 78}, {"COUNTY_NAME": "MONROE", "NUM_SCHOOLS": 527}, {"COUNTY_NAME": "MONTGOMERY", "NUM_SCHOOLS": 48}, {"COUNTY_NAME": "NASSAU", "NUM_SCHOOLS": 934}, {"COUNTY_NAME": "NEW YORK", "NUM_SCHOOLS": 1038}, {"COUNTY_NAME": "NIAGARA", "NUM_SCHOOLS": 150}, {"COUNTY_NAME": "NYC CENTRAL OFFICE", "NUM_SCHOOLS": 183}, {"COUNTY_NAME": "ONEIDA", "NUM_SCHOOLS": 205}, {"COUNTY_NAME": "ONONDAGA", "NUM_SCHOOLS": 357}, {"COUNTY_NAME": "ONTARIO", "NUM_SCHOOLS": 86}, {"COUNTY_NAME": "ORANGE", "NUM_SCHOOLS": 233}, {"COUNTY_NAME": "ORLEANS", "NUM_SCHOOLS": 36}, {"COUNTY_NAME": "OSWEGO", "NUM_SCHOOLS": 111}, {"COUNTY_NAME": "OTSEGO", "NUM_SCHOOLS": 63}, {"COUNTY_NAME": "PUTNAM", "NUM_SCHOOLS": 66}, {"COUNTY_NAME": "QUEENS", "NUM_SCHOOLS": 1109}, {"COUNTY_NAME": "RENSSELAER", "NUM_SCHOOLS": 115}, {"COUNTY_NAME": "RICHMOND", "NUM_SCHOOLS": 239}, {"COUNTY_NAME": "ROCKLAND", "NUM_SCHOOLS": 188}, {"COUNTY_NAME": "SAINT LAWRENCE", "NUM_SCHOOLS": 111}, {"COUNTY_NAME": "SARATOGA", "NUM_SCHOOLS": 156}, {"COUNTY_NAME": "SCHENECTADY", "NUM_SCHOOLS": 115}, {"COUNTY_NAME": "SCHOHARIE", "NUM_SCHOOLS": 33}, {"COUNTY_NAME": "SCHUYLER", "NUM_SCHOOLS": 15}, {"COUNTY_NAME": "SENECA", "NUM_SCHOOLS": 33}, {"COUNTY_NAME": "STEUBEN", "NUM_SCHOOLS": 103}, {"COUNTY_NAME": "SUFFOLK", "NUM_SCHOOLS": 1011}, {"COUNTY_NAME": "SULLIVAN", "NUM_SCHOOLS": 57}, {"COUNTY_NAME": "TIOGA", "NUM_SCHOOLS": 57}, {"COUNTY_NAME": "TOMPKINS", "NUM_SCHOOLS": 90}, {"COUNTY_NAME": "ULSTER", "NUM_SCHOOLS": 133}, {"COUNTY_NAME": "WARREN", "NUM_SCHOOLS": 57}, {"COUNTY_NAME": "WASHINGTON", "NUM_SCHOOLS": 72}, {"COUNTY_NAME": "WAYNE", "NUM_SCHOOLS": 108}, {"COUNTY_NAME": "WESTCHESTER", "NUM_SCHOOLS": 754}, {"COUNTY_NAME": "WYOMING", "NUM_SCHOOLS": 36}, {"COUNTY_NAME": "YATES", "NUM_SCHOOLS": 15}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
