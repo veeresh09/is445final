@@ -62,62 +62,63 @@
     <h4>Plot 2</h4>
     <p>More specifically, the slider enables the selection of the desired number of schools to display, and only counties meeting that criteria will be highlighted on the map. Discover the concentration of educational institutions in different areas of the city at a glance.</p>
     <iframe src="https://youpeng0630.github.io/445final/youpeng.html" height="600"></iframe>
-    <button onclick="fetchCSV()">Refresh</button>
-    <br></br>
-    <table id="csvData">
-        <thead>
-            <tr>
-                <th>Column1</th>
-                <th>Column2</th>
-                <th>Column3</th>
-                <!-- Add more columns as needed -->
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script>
-    function fetchCSV() {
-        // Path relative to the HTML file or absolute path in the same repository
-        const url = './BEDS_Day_Enrollment.csv';  // Adjust the path as necessary
-    
-        fetch(url)
-            .then(response => response.text())
-            .then(csvString => {
-                // Use PapaParse to convert string to array of objects
-                const data = Papa.parse(csvString, {
-                    header: true,
-                    skipEmptyLines: true
-                }).data;
-    
-                // Display the top 5 rows
-                displayData(data.slice(0, 5));
-            })
-            .catch(error => console.error('Error fetching CSV:', error));
-    }
-    
-    function displayData(data) {
-        const tableBody = document.getElementById('csvData').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ''; // Clear previous data
-    
-        // Append new rows
-        data.forEach(row => {
-            const tr = document.createElement('tr');
-            Object.values(row).forEach(text => {
-                const td = document.createElement('td');
-                td.textContent = text;
-                tr.appendChild(td);
-            });
-            tableBody.appendChild(tr);
+    <button onclick="location.reload();">Refresh</button>
+<br></br>
+<table id="csvData">
+    <thead>
+        <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <!-- Add more columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<script>
+function fetchCSV() {
+    // Path relative to the HTML file or absolute path in the same repository
+    const url = './BEDS_Day_Enrollment.csv';  // Adjust the path as necessary
+
+    fetch(url)
+        .then(response => response.text())
+        .then(csvString => {
+            // Use PapaParse to convert string to array of objects
+            const data = Papa.parse(csvString, {
+                header: true,
+                skipEmptyLines: true
+            }).data;
+
+            // Display the top 5 rows
+            displayData(data.slice(0, 5));
+        })
+        .catch(error => console.error('Error fetching CSV:', error));
+}
+
+function displayData(data) {
+    const tableBody = document.getElementById('csvData').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = ''; // Clear previous data
+
+    // Append new rows
+    data.forEach(row => {
+        const tr = document.createElement('tr');
+        Object.values(row).forEach(text => {
+            const td = document.createElement('td');
+            td.textContent = text;
+            tr.appendChild(td);
         });
-    }
-    
-    window.onload = function() {
-        fetchCSV(); // Fetch CSV when the page loads
-    };
-    </script>
-    
+        tableBody.appendChild(tr);
+    });
+}
+
+window.onload = function() {
+    fetchCSV(); // Fetch CSV when the page loads
+};
+</script>
+
 </body>
 </html>

@@ -344,7 +344,6 @@ fig = px.choropleth(sum_by_county_df, geojson=filtered_geojson, locations='id', 
                     range_color=(0, sum_by_county_df['log_NUM_WHITE'].max()),
                     scope="usa",
                     hover_name="COUNTY_NAME",
-                    hover_data = "NUM_WHITE"
                    )
 fig.update_layout(margin={"r":0, "t":0, "l":0, "b":0})
 fig.update_geos(fitbounds="locations")
@@ -361,7 +360,6 @@ fig = px.choropleth(sum_by_county_df, geojson=filtered_geojson, locations='id', 
                     range_color=(0, sum_by_county_df['log_NUM_BLACK'].max()),
                     scope="usa",
                     hover_name="COUNTY_NAME",
-                    hover_data = "NUM_BLACK"
                    )
 fig.update_layout(margin={"r":0, "t":0, "l":0, "b":0})
 fig.update_geos(fitbounds="locations")
@@ -374,7 +372,6 @@ fig = px.choropleth(sum_by_county_df, geojson=filtered_geojson, locations='id', 
                     range_color=(0, sum_by_county_df['log_NUM_ASIAN'].max()),
                     scope="usa",
                     hover_name="COUNTY_NAME",
-                    hover_data = "NUM_ASIAN"
                    )
 fig.update_layout(margin={"r":0, "t":0, "l":0, "b":0})
 fig.update_geos(fitbounds="locations")
