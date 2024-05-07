@@ -332,8 +332,6 @@ for column in sum_by_county_df.columns:
         sum_by_county_df[f'log_{column}'] = np.log(sum_by_county_df[column] + 1)  # Adding 1 to avoid log(0) issue
 
 # %%
-import plotly.io as pio
-pio.renderers.default = 'iframe'
 
 # %% [markdown]
 # We aim to create a geographical choropleth map using the Plotly Express (px) library. The map displays aggregated data about the population of white students in different counties in New York State, color-coding them based on the logarithmic value of the number of white students (log_NUM_WHITE).
