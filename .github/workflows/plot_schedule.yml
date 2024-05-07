@@ -1,0 +1,35 @@
+name: Generate and Commit Plot
+
+on:
+  push:
+    branches: [ main ]  # Trigger the workflow on push events to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate plot and export as HTML
+        run: python temp.py  # Ensure this script generates an HTML file
+
+      - name: Commit and push if changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Update plot" || exit 0  # This command exits with 0 if nothing to commit
+          git push
+
