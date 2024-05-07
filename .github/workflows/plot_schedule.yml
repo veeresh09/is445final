@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Generate plot and export as HTML
-        run: python temp.py  # Ensure this script generates an HTML file
+        run: python finalproj.py  # Ensure this script generates an HTML file
 
       - name: Commit and push if changes
         run: |
